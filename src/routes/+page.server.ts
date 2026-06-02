@@ -1,10 +1,9 @@
 import type { PageServerLoad } from './$types';
-import { JsonServiceRepository } from '$lib/services/json-service-repository';
 
-const repository = new JsonServiceRepository();
+import { serviceRepository } from '$lib/services';
 
 export const load: PageServerLoad = async () => {
-	const config = await repository.getConfig();
+	const config = await serviceRepository.getConfig();
 
 	return {
 		services: config.services,

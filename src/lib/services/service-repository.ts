@@ -1,5 +1,5 @@
-import type { ResolvedServicesConfig } from '$lib/models/services-config';
+import type { DashboardConfig } from '$lib/types/service';
 
 export interface ServiceRepository {
-	getConfig(): Promise<ResolvedServicesConfig>;
+	getConfig(): Promise<DashboardConfig>;
 }

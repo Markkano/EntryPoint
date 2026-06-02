@@ -8,18 +8,18 @@ Built with SvelteKit, TailwindCSS and Docker.
 
 ## Features
 
-* Responsive dashboard UI
-* Minimalist dark theme
-* Categorized and uncategorized services
-* JSON-based configuration
-* Optional icons and descriptions
-* Optional same-tab navigation
-* Docker-ready
-* Persistent configuration
-* Runtime-served custom icons
-* No database required
-* No authentication
-* Simple and fast setup
+- Responsive dashboard UI
+- Minimalist dark theme
+- Categorized and uncategorized services
+- JSON-based configuration
+- Optional icons and descriptions
+- Optional same-tab navigation
+- Docker-ready
+- Persistent configuration
+- Runtime-served custom icons
+- No database required
+- No authentication
+- Simple and fast setup
 
 ---
 
@@ -27,35 +27,35 @@ Built with SvelteKit, TailwindCSS and Docker.
 
 EntryPoint is designed to work as a personal launcher for:
 
-* Self-hosted applications
-* Docker services
-* NAS tools
-* Monitoring stacks
-* External developer tools
-* Local network resources
+- Self-hosted applications
+- Docker services
+- NAS tools
+- Monitoring stacks
+- External developer tools
+- Local network resources
 
 Examples:
 
-* Grafana
-* Portainer
-* Home Assistant
-* phpMyAdmin
-* MinIO
-* Redis Insight
-* Gitea
-* Jellyfin
-* Nextcloud
-* IT Tools
+- Grafana
+- Portainer
+- Home Assistant
+- phpMyAdmin
+- MinIO
+- Redis Insight
+- Gitea
+- Jellyfin
+- Nextcloud
+- IT Tools
 
 ---
 
 ## Tech Stack
 
-* SvelteKit
-* TailwindCSS
-* TypeScript
-* Docker
-* Docker Compose
+- SvelteKit
+- TailwindCSS
+- TypeScript
+- Docker
+- Docker Compose
 
 ---
 
@@ -104,24 +104,29 @@ config/services.example.json
 
 ```json
 {
-  "services": [
-    {
-      "name": "Grafana",
-      "url": "http://grafana.local"
-    }
-  ],
-  "categories": [
-    {
-      "name": "Databases",
-      "services": [
-        {
-          "name": "phpMyAdmin",
-          "url": "http://phpmyadmin.local",
-          "description": "MySQL administration"
-        }
-      ]
-    }
-  ]
+	"services": [
+		{
+			"name": "Grafana",
+			"url": "http://grafana.local",
+			"status": {
+				"enabled": true
+			}
+		}
+	],
+	"categories": [
+		{
+			"name": "Databases",
+			"services": [
+				{
+					"name": "phpMyAdmin",
+					"url": "http://phpmyadmin.local",
+					"status": {
+						"enabled": true
+					}
+				}
+			]
+		}
+	]
 }
 ```
 
@@ -133,8 +138,8 @@ config/services.example.json
 
 ```json
 {
-  "name": "Grafana",
-  "url": "http://grafana.local"
+	"name": "Grafana",
+	"url": "http://grafana.local"
 }
 ```
 
@@ -142,12 +147,14 @@ config/services.example.json
 
 ```json
 {
-  "name": "Grafana",
-  "url": "http://grafana.local",
-  "description": "Monitoring dashboard",
-  "icon": "/icons/grafana.png",
-  "status_check": true,
-  "same_tab": true
+	"name": "Grafana",
+	"url": "http://grafana.local",
+	"description": "Monitoring dashboard",
+	"icon": "/icons/grafana.png",
+	"same_tab": true,
+	"status": {
+		"enabled": true
+	}
 }
 ```
 
@@ -157,9 +164,9 @@ config/services.example.json
 
 Icons can be:
 
-* Local runtime icons
-* Static bundled icons
-* External URLs
+- Local runtime icons
+- Static bundled icons
+- External URLs
 
 ### Runtime icons
 
@@ -173,7 +180,7 @@ And reference them as:
 
 ```json
 {
-  "icon": "/icons/grafana.png"
+	"icon": "/icons/grafana.png"
 }
 ```
 
@@ -191,10 +198,10 @@ volumes:
 
 This allows:
 
-* Persistent configuration
-* Persistent uploaded icons
-* Easy backups
-* Easy migration between servers
+- Persistent configuration
+- Persistent uploaded icons
+- Easy backups
+- Easy migration between servers
 
 ---
 
@@ -217,14 +224,14 @@ http://localhost:5173
 
 ## Planned Features
 
-* Online status checks
-* Config hot reload
-* Drag & drop reordering
-* Add/Edit services from UI
-* Categories management
-* Upload icons from UI
-* TCP ping
-* Import / Export configuration
+- Online status checks
+- Config hot reload
+- Drag & drop reordering
+- Add/Edit services from UI
+- Categories management
+- Upload icons from UI
+- TCP ping
+- Import / Export configuration
 
 ---
 
@@ -234,11 +241,11 @@ EntryPoint is intentionally simple.
 
 The goal is to provide:
 
-* A clean self-hosted dashboard
-* Minimal setup
-* Human-readable configuration
-* Easy portability
-* No unnecessary complexity
+- A clean self-hosted dashboard
+- Minimal setup
+- Human-readable configuration
+- Easy portability
+- No unnecessary complexity
 
 ## About This Project
 
@@ -246,9 +253,9 @@ EntryPoint is primarily a personal learning project.
 
 I'm building it to:
 
-* Learn and improve with SvelteKit
-* Experiment with frontend architecture and UI design
-* Practice Docker-based deployments
-* Build tools that are actually useful in my homelab
+- Learn and improve with SvelteKit
+- Experiment with frontend architecture and UI design
+- Practice Docker-based deployments
+- Build tools that are actually useful in my homelab
 
 The project intentionally keeps things simple and lightweight while evolving incrementally over time.

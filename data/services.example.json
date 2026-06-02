@@ -2,7 +2,10 @@
 	"services": [
 		{
 			"name": "Grafana",
-			"url": "http://grafana.local"
+			"url": "http://grafana.local",
+			"status": {
+				"enabled": true
+			}
 		}
 	],
 	"categories": [
@@ -11,7 +14,10 @@
 			"services": [
 				{
 					"name": "phpMyAdmin",
-					"url": "http://phpmyadmin.local"
+					"url": "http://phpmyadmin.local",
+					"status": {
+						"enabled": true
+					}
 				}
 			]
 		}
