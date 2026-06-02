@@ -1,0 +1,19 @@
+{
+	"services": [
+		{
+			"name": "Grafana",
+			"url": "http://grafana.local"
+		}
+	],
+	"categories": [
+		{
+			"name": "Databases",
+			"services": [
+				{
+					"name": "phpMyAdmin",
+					"url": "http://phpmyadmin.local"
+				}
+			]
+		}
+	]
+}

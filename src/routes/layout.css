@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+* {
+	font-family: 'Inter', sans-serif;
+}
+
+.service-card {
+	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	cursor: pointer;
+}
+
+.service-card:hover {
+	transform: scale(1.02);
+	border-color: rgb(100, 116, 139);
+}
+
+.status-dot {
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.status-dot.offline {
+	animation: none;
+	opacity: 0.4;
+}
+
+html {
+	background-color: rgb(15, 23, 42);
+}
