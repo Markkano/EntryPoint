@@ -108,6 +108,7 @@ config/services.example.json
 		{
 			"name": "Grafana",
 			"url": "http://grafana.local",
+			"icon": "grafana.png",
 			"status": {
 				"enabled": true
 			}
@@ -150,7 +151,7 @@ config/services.example.json
 	"name": "Grafana",
 	"url": "http://grafana.local",
 	"description": "Monitoring dashboard",
-	"icon": "/icons/grafana.png",
+	"icon": "grafana.png",
 	"same_tab": true,
 	"status": {
 		"enabled": true

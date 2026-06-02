@@ -1,14 +1,16 @@
 <script lang="ts">
 	import ServiceCard from './ServiceCard.svelte';
 
-	import type { Service } from '$lib/models/service';
+	import type { Service } from '$lib/types/service';
+	import type { ServiceStatus } from '$lib/types/status';
 
 	interface Props {
 		title?: string;
 		services: Service[];
+		statuses: Record<string, ServiceStatus>;
 	}
 
-	let { title, services }: Props = $props();
+	let { title, services, statuses }: Props = $props();
 </script>
 
 <section class="mb-12">
@@ -19,8 +21,8 @@
 	{/if}
 
 	<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-		{#each services as service (service.name)}
-			<ServiceCard {service} />
+		{#each services as service (service.key)}
+			<ServiceCard {service} status={statuses[service.key]} />
 		{/each}
 	</div>
 </section>

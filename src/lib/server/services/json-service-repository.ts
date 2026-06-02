@@ -39,6 +39,12 @@ export class JsonServiceRepository implements ServiceRepository {
 		return config;
 	}
 
+	public async getAllServices(): Promise<Service[]> {
+		const config = await this.getConfig();
+
+		return [...config.services, ...config.categories.flatMap((category) => category.services)];
+	}
+
 	private async ensureConfigExists(): Promise<void> {
 		try {
 			await fs.access(CONFIG_PATH);
@@ -76,17 +82,11 @@ export class JsonServiceRepository implements ServiceRepository {
 	private normalizeService(service: ServiceConfig, categoryName?: string): Service {
 		return {
 			key: this.generateKey(service, categoryName),
-
 			name: service.name,
-
 			url: service.url,
-
 			description: service.description,
-
-			icon: service.icon,
-
+			icon: service.icon ? `/api/icons/${service.icon}` : undefined,
 			same_tab: service.same_tab ?? false,
-
 			status: {
 				enabled: service.status?.enabled ?? false
 			}

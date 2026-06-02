@@ -3,6 +3,7 @@
 		{
 			"name": "Grafana",
 			"url": "http://grafana.local",
+			"icon": "grafana.png",
 			"status": {
 				"enabled": true
 			}
