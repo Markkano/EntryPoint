@@ -193,7 +193,6 @@ The following folders are persisted:
 
 ```yaml
 volumes:
-  - ./config:/app/config
   - ./data:/app/data
 ```
 
